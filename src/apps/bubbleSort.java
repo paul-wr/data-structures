@@ -3,6 +3,10 @@ public class BubbleSort {
         // create array to sort
         int[] array = {33, 232, 11, 77, 2, 45, 3, 90, 21, 312, 444, 2};
 
+
+        // print unsorted array
+        System.out.println("Array Length: "+array.length);
+
         // print unsorted array
         System.out.println("Unsorted Array:");
         printArray(array);
@@ -25,6 +29,7 @@ public class BubbleSort {
 
     // method to sort array with int array parameter
     public static void bubbleSort(int[] array){
+        int bigO = 0;
         // store array length
         int n = array.length;
 
@@ -34,6 +39,7 @@ public class BubbleSort {
         // for loop traverses array
         for(int i = 0; i < n; i++){
             for(int j = 1; j < n; j++) {
+                bigO++;
                 // compare each element value with the next element value in the array
                 if (array[j - 1] > array[j]) {
                     // if left position value is greater, assign the value to temp
@@ -45,5 +51,6 @@ public class BubbleSort {
                 }
             }
         }
+        System.out.println("\nO(n^2) for this array = "+bigO+"\n");
     }
 }
